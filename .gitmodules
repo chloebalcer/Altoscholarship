@@ -1,9 +1,0 @@
-[submodule "backend"]
-	path = backend
-	url = https://github.com/chloebalcer/backend.git
-[submodule "frontend"]
-	path = frontend
-	url = https://github.com/chloebalcer/frontend.git
-[submodule "nginx"]
-	path = nginx
-	url = https://github.com/chloebalcer/nginx.git
