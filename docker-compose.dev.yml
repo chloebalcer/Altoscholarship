@@ -1,0 +1,62 @@
+version: '3'
+
+services:
+  nginx:
+    build:
+      context: .
+      dockerfile: nginx/dev/Dockerfile
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+      - frontend
+    volumes:
+      - ./nginx/dev/dev.conf:/etc/nginx/nginx.conf:ro
+      - django-static:/usr/src/app/static  
+    networks:
+      - main
+
+  db:
+    container_name: db
+    image: postgres
+    networks:
+      - main
+
+  backend:
+    container_name: backend
+    build: ./backend
+    command: /start.sh
+    volumes:
+      - .:/code
+      - django-static:/backend/static
+    ports:
+      - "8000:8000"
+    networks:
+      - main
+    depends_on:
+      - db
+
+  frontend:
+    container_name: frontend
+    build:
+      context: ./frontend
+    volumes:
+      - ./frontend:/app/frontend:ro
+      - '/app/node_modules'
+    ports:
+      - "3000:3000"
+    networks:
+      - main
+    depends_on:
+      - backend
+      - db
+    environment:
+      - NODE_ENV=development
+
+networks:
+  main:
+    driver: bridge
+
+volumes:
+  django-static:
+    
