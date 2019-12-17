@@ -12,3 +12,12 @@ For more information about submodules, check [git submodules](https://git-scm.co
 ```
 $ docker-compose -f docker-compose.dev.yml up --build
 ```
+### Virtual Environment
+#### When  working on backend, don't forget to activate the virtual environment with :
+```
+$ source .env/scripts/activate
+```
+#### To deactivate virtual environment, simply run :
+```
+$ deactivate
+```
