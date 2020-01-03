@@ -1,6 +1,6 @@
 .env
 .vscode
-alto
 .babelrc
 webpack.config.js
 node_modules
+virtual
