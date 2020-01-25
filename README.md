@@ -16,7 +16,7 @@ $ docker-compose -f docker-compose.dev.yml up --build
 #### When  working on backend, don't forget to create a virtual environment.
 ```
 $ virtualenv <nameofmyvirualenv>
-$ source .env/scripts/activate
+$ source <nameofmyvirualenv>/scripts/activate
 ```
 Once you've activated your virtual environment, put it inside .gitignore file from the root directory.
 Now, you can install all the dependencies from the requirements.txt file.
