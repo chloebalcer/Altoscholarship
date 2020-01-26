@@ -1,5 +1,6 @@
 # Altoscholarship
 
+### Submodules
 #### About Submodules
 As you can see, Frontend and Backend folders are submodules.
 Thus, to clone the whole project including both submodules you should type the following :
