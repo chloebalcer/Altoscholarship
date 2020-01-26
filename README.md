@@ -1,6 +1,6 @@
 # Altoscholarship
 
-### Submodules
+### SUBMODULES
 #### About Submodules
 As you can see, Frontend and Backend folders are submodules.
 Thus, to clone the whole project including both submodules you should type the following :
@@ -13,7 +13,7 @@ For more information about submodules, check [git submodules](https://git-scm.co
 ```
 $ docker-compose -f docker-compose.dev.yml up --build
 ```
-### Virtual Environment
+### VIRTUAL ENVIRONMENT
 #### When  working on backend, don't forget to create a virtual environment.
 ```
 $ virtualenv <nameofmyvirualenv>
@@ -32,6 +32,6 @@ $ pip freeze > requirements.txt
 ```
 $ deactivate
 ```
-### Save my progress
+### SAVE MY PROGRESS
 
 You should always remember that you are working with submodules. It is thus important to push new content firstly into the submodule you are working on and then push it into the main repository.
