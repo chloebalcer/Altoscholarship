@@ -12,7 +12,8 @@ services:
       - backend
     volumes:
       - ./nginx/prod/prod.conf:/etc/nginx/nginx.conf:ro
-      - django-static-prod:/usr/src/app/static  
+      - django-static-prod:/usr/src/app/static 
+      - front:/dist
     networks:
       - main
 
@@ -45,4 +46,5 @@ networks:
 volumes:
   django-static-prod:
   pg-data:
+  front:
     

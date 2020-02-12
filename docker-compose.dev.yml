@@ -6,7 +6,7 @@ services:
       context: .
       dockerfile: nginx/dev/Dockerfile
     ports:
-      - "80:80"
+      - "85:80"
     depends_on:
       - backend
       - frontend
@@ -43,7 +43,7 @@ services:
     build:
       context: ./frontend
     volumes:
-      - ./frontend:/app/frontend:ro
+      - ./frontend:/app/:ro
       - '/app/node_modules'
     ports:
       - "3000:3000"
