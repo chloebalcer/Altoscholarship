@@ -6,7 +6,7 @@ services:
       context: .
       dockerfile: nginx/dev/Dockerfile
     ports:
-      - "85:80"
+      - "88:80"
     depends_on:
       - backend
       - frontend
