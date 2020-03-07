@@ -12,7 +12,7 @@ services:
       - frontend
     volumes:
       - ./nginx/dev/dev.conf:/etc/nginx/nginx.conf:ro
-      - django-static:/usr/src/app/static  
+      - django-static:/usr/src/app/static
     networks:
       - main
 
@@ -23,6 +23,8 @@ services:
       - "5432:5432"
     networks:
       - main
+    environment: 
+      - POSTGRES_HOST_AUTH_METHOD=trust
 
   backend:
     container_name: backend
@@ -30,7 +32,7 @@ services:
     command: /start.sh
     volumes:
       - .:/code
-      - django-static:/backend/static
+      - django-static:/code/backend/static
     ports:
       - "8000:8000"
     networks:

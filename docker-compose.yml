@@ -19,11 +19,17 @@ services:
 
   db:
     container_name: db_prod
-    image: postgres 
+    image: mysql:5.7
     networks:
       - main
     volumes:
-      - pg-data:/var/lib/postgres/data
+      - pg-data:/var/lib/mysql
+    environment:
+      - MYSQL_DATABASE=alto-db
+      - MYSQL_USER=altoadmin
+      - MYSQL_PASSWORD=*****************
+      - MYSQL_ROOT_PASSWORD=*************
+      - MYSQL_ROOT_HOST=alto-db.********.us-east-2.rds.amazonaws.com
 
   backend:
     container_name: backend_prod
@@ -47,3 +53,5 @@ volumes:
   django-static-prod:
   pg-data:
   front:
+
+
